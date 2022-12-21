@@ -1,0 +1,18 @@
+table{
+    width: 100%;
+    border: 2px solid #ff9b7d;
+    padding: 10px;
+    border-radius: 10px;
+}
+thead tr td{
+    color: #727272;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 0 10px;
+}
+tbody tr td{
+    color: #181818;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 16px 10px;
+}
