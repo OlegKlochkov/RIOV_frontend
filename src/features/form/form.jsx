@@ -23,7 +23,7 @@ export default function Form(props) {
     return (
         <form className="container_form" onSubmit={handleSubmit}>
             <Input label='title' change={(e) => setName(e.value)} />
-            <Input label='Password' change={(e) => setPass(e.value)} />
+            <Input label='status' change={(e) => setPass(e.value)} />
             <button type="submit" className={memoDisabled ? 'disabled' : ''} disabled={memoDisabled} >Submit</button>
         </form>
     )
