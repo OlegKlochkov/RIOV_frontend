@@ -3,9 +3,9 @@ import './App.css';
 import Form from './features/form/form';
 import TableStructure from './features/tableStructure';
 
-let dataSelect = [{ label: 'Форма 1' }, { label: 'Таблица 1' }, { label: 'Форма 2' }, { label: 'Таблица 2' }]
+const dataSelect = [{ label: 'Форма 1' }, { label: 'Таблица 1' }, { label: 'Форма 2' }, { label: 'Таблица 2' }]
 function App() {
-  const [select, setSelect] = useState('Форма');
+  const [select, setSelect] = useState('Форма 1');
   return (
     <div className="App">
       <div className="selector_container">
