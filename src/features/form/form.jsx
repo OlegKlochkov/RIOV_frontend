@@ -4,7 +4,7 @@ import { createData } from '../../actions/actions';
 import Input from '../../components/input/input'
 import './form.css'
 
-export default function Form() {
+export default function Form(props) {
     const [title, setName] = useState('');
     const [status, setPass] = useState('');
 
@@ -14,7 +14,7 @@ export default function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createData({
+        createData(props.path, {
             title: title,
             status: status,
         })
