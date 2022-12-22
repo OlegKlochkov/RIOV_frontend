@@ -21,7 +21,7 @@ export default function Form({ path, type, id, callback, obj }) {
             }
         }
 
-        return true;
+        return false;
     }, [objUpdated])
 
     const updateFields = (field, val) => {
