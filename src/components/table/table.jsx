@@ -1,6 +1,13 @@
 import './table.css'
+import { deleteData } from '../../actions/actions'
+import { useState } from 'react';
 
-export default function Table ({head = [], body = [], data = []}) {
+export default function Table ({ head = [], body = [], data = [], path, handleUpdate, setEdit }) {
+    const handleDelete = async (id) => {
+        await deleteData(path, id);
+        handleUpdate();
+    }
+
     return(
         <table>
             <thead>
@@ -20,8 +27,10 @@ export default function Table ({head = [], body = [], data = []}) {
                                 {
                                     body.map((element, i)=>(
                                         <td key={i}>{obj[element]}</td>
-                                    ))
+                                    )) 
                                 }
+                                <button onClick={() => setEdit(obj.id)}>Edit</button>
+                                <button onClick={() => handleDelete(obj.id)}>Delete</button>
                             </tr>
                         ))
                     }

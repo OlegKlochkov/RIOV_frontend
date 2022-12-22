@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import { useState } from 'react'
-import { createData } from '../../actions/actions';
-import Input from '../../components/input/input'
-import './form.css'
+import { useState } from 'react';
+import { createData, editData } from '../../actions/actions';
+import Input from '../../components/input/input';
+import './form.css';
 
-export default function Form(props) {
+export default function Form({ path, type, id, callback }) {
     const [title, setName] = useState('');
     const [status, setPass] = useState('');
 
@@ -12,12 +12,20 @@ export default function Form(props) {
         return (!title || !status);
     }, [title, status])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        createData(props.path, {
-            title: title,
-            status: status,
-        })
+        if (type === 'edit') {
+            await editData(path, id, {
+                title: title,
+                status: status,
+            });
+            callback();
+        } else {
+            createData(path, {
+                title: title,
+                status: status,
+            })
+        }
     }
 
     return (

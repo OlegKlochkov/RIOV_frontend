@@ -22,3 +22,23 @@ export const createData = async (path, data) => {
         console.error('createData', e);
     }
 }
+
+export const editData = async (path, id, data) => {
+    try {
+        const response = await axios.put(`${url}/${path}/${id}`, data);
+
+        return response;
+    } catch (e) {
+        console.error('putData', e)
+    }
+}
+
+export const deleteData = async (path, id) => {
+    try {
+        const response = await axios.delete(`${url}/${path}/${id}`);
+
+        return response;
+    } catch (e) {
+        console.error('deleteData', e)
+    }
+}
