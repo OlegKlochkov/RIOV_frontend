@@ -17,7 +17,7 @@ export default function TableStructure({ path, labels, keys }) {
     const handleUpdate = () => {
         fetchData();
         if (edit) {
-            setEdit(0);
+            setEdit(null);
         }
     }
 
@@ -36,7 +36,7 @@ export default function TableStructure({ path, labels, keys }) {
                 setEdit={setEdit}
             />
             {
-                edit && <Form path={path} type='edit' id={edit} callback={handleUpdate}/>
+                edit && <Form path={path} type='edit' id={edit} callback={handleUpdate} obj={{title: '', status: ''}}/>
             }
         </div>
         

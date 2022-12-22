@@ -17,13 +17,13 @@ function App() {
       </div>
       <div className="content_container">
         {
-          select === 'Форма 1' && <Form path='first/object'/>
+          select === 'Форма 1' && <Form path='first/object' obj={{title: '', status: ''}}/>
         }
         {
           select === 'Таблица 1' && <TableStructure path='first/object' labels={ ['id', 'имя', 'статус'] } keys={ ['id', 'title', 'status'] } />
         }
         {
-          select === 'Форма 2' && <Form path='second/object'/>
+          select === 'Форма 2' && <Form path='second/object' obj={{title: '', status: ''}}/>
         }
         {
           select === 'Таблица 2' && <TableStructure path='second/object' labels={ ['id', 'имя', 'статус'] } keys={ ['id', 'title', 'status'] } />
