@@ -26,7 +26,9 @@ export default function Form({ path, type, id, callback, obj }) {
 
     const updateFields = (field, val) => {
         let obj = inputObj;
-        obj[field] = val;
+        console.log(isNaN(Number(val)))
+        obj[field] = isNaN(Number(val)) ? val : Number(val);
+        console.log(obj)
         setInputObj(obj);
         setObjUpdated(objUpdated + 1);//костыль для useMemo, т.к. изменение объекта не отследить (ссылка та же)
     }

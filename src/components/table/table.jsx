@@ -1,6 +1,5 @@
-import './table.css'
-import { deleteData } from '../../actions/actions'
-import { useState } from 'react';
+import './table.css';
+import { deleteData } from '../../actions/actions';
 
 export default function Table ({ head = [], body = [], data = [], path, handleUpdate, setEdit }) {
     const handleDelete = async (id) => {
