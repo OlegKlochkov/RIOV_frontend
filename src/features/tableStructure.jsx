@@ -4,7 +4,7 @@ import { getData } from "../actions/actions";
 import Table from "../components/table/table";
 import Form from "./form/form";
 
-export default function TableStructure({ path, labels, keys }) {
+export default function TableStructure({ path, labels, keys, obj }) {
     const [data, setData] = useState([]);
     const [edit, setEdit] = useState();
 
@@ -36,7 +36,7 @@ export default function TableStructure({ path, labels, keys }) {
                 setEdit={setEdit}
             />
             {
-                edit && <Form path={path} type='edit' id={edit} callback={handleUpdate} obj={{title: '', status: ''}}/>
+                edit && <Form path={path} type='edit' id={edit} callback={handleUpdate} obj={obj}/>
             }
         </div>
         
